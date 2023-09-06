@@ -3,8 +3,8 @@
 #include "main.h"
 
 /**
- * main - prints the minimum number of coins to
- * make change for an amount of money
+ * main - prints the minimum numbers
+ * make change an amount
  * @argc: number of arguments
  * @argv: array of arguments
  *
@@ -12,8 +12,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int num, j, result;
-	int coins[] = {25, 10, 5, 2, 1};
+	int digit, a, answer;
+	int cents[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
@@ -21,25 +21,25 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	num = atoi(argv[1]);
-	result = 0;
+	digit = atoi(argv[1]);
+	answer = 0;
 
-	if (num < 0)
+	if (digit < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	for (j = 0; j < 5 && num >= 0; j++)
+	for (a = 0; a < 5 && digit >= 0; a++)
 	{
-		while (num >= coins[j])
+		while (digit >= cents[a])
 		{
-			result++;
-			num -= coins[j];
+			answer++;
+			digit -= cents[a];
 		}
 	}
 
-	printf("%d\n", result);
+	printf("%d\n", answer);
 	return (0);
 }
 
