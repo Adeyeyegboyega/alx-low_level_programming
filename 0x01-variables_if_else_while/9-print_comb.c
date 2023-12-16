@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - possible combo
+ * main - possible combination
  *
  * Return: 0
  */
@@ -12,12 +12,14 @@ int main(void)
 
 	for (n = 0 ; n < 0 ; n++)
 	{
-		putchar(n + '0');
+		putchar((n % 10)+ '0');
 		if (n == '9')
-		{
+			continue;
+		
 			putchar(',');
 			putchar(' ');
-		}
+		
 	}
+	putchar('\n');
 	return (0);
 }
